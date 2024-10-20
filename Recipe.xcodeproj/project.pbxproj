@@ -29,20 +29,42 @@
 		98684DC62CC533BE000A9E97 /* RecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		98684DDE2CC53949000A9E97 /* Exceptions for "Recipe" folder in "Recipe" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RecipeTests/RecipeTests.swift,
+				RecipeUITests/RecipeUITests.swift,
+				RecipeUITests/RecipeUITestsLaunchTests.swift,
+			);
+			target = 98684DAB2CC533BD000A9E97 /* Recipe */;
+		};
+		98684DDF2CC53949000A9E97 /* Exceptions for "Recipe" folder in "RecipeTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RecipeTests/RecipeTests.swift,
+			);
+			target = 98684DBB2CC533BE000A9E97 /* RecipeTests */;
+		};
+		98684DE52CC5395A000A9E97 /* Exceptions for "Recipe" folder in "RecipeUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				RecipeUITests/RecipeUITests.swift,
+				RecipeUITests/RecipeUITestsLaunchTests.swift,
+			);
+			target = 98684DC52CC533BE000A9E97 /* RecipeUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		98684DAE2CC533BD000A9E97 /* Recipe */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				98684DDE2CC53949000A9E97 /* Exceptions for "Recipe" folder in "Recipe" target */,
+				98684DDF2CC53949000A9E97 /* Exceptions for "Recipe" folder in "RecipeTests" target */,
+				98684DE52CC5395A000A9E97 /* Exceptions for "Recipe" folder in "RecipeUITests" target */,
+			);
 			path = Recipe;
-			sourceTree = "<group>";
-		};
-		98684DBF2CC533BE000A9E97 /* RecipeTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RecipeTests;
-			sourceTree = "<group>";
-		};
-		98684DC92CC533BE000A9E97 /* RecipeUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RecipeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				98684DAE2CC533BD000A9E97 /* Recipe */,
-				98684DBF2CC533BE000A9E97 /* RecipeTests */,
-				98684DC92CC533BE000A9E97 /* RecipeUITests */,
 				98684DAD2CC533BD000A9E97 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +150,6 @@
 			dependencies = (
 				98684DBE2CC533BE000A9E97 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				98684DBF2CC533BE000A9E97 /* RecipeTests */,
-			);
 			name = RecipeTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +169,6 @@
 			);
 			dependencies = (
 				98684DC82CC533BE000A9E97 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				98684DC92CC533BE000A9E97 /* RecipeUITests */,
 			);
 			name = RecipeUITests;
 			packageProductDependencies = (
