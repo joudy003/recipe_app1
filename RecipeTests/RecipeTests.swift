@@ -1,9 +1,3 @@
-//
-//  RecipeTests.swift
-//  RecipeTests
-//
-//  Created by Joud Abdullah AlAmri on 10/20/24.
-//
 
 import Testing
 @testable import Recipe
