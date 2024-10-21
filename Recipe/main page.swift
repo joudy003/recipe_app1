@@ -7,7 +7,7 @@ struct main_page: View {
       
                 NavigationView {
                     ZStack(alignment: .top) {
-                        Color(.systemGray6) // Extending the background color to the top
+                        Color(.systemGray3) // Extending the background color to the top
                             .edgesIgnoringSafeArea(.top)
                             .frame(height: 30
     ) // Height of the header
@@ -36,12 +36,15 @@ struct main_page: View {
                             
                             // Empty State Message
                             Text("There’s no recipe yet")
-                                .font(.system(size: 24, weight: .bold))
+                                .font(.system(size: 34, weight: .bold))
                                 .multilineTextAlignment(.center)
                             
+                                .padding()
+                                .padding()
+                            
                             Text("Please add your recipes")
-                                .font(.system(size: 18))
-                                .foregroundColor(.gray)
+                                .font(.system(size: 22))
+                                .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                             
                             Spacer()
