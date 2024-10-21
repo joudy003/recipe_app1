@@ -36,9 +36,7 @@ struct AddNewRecipes: View {
                         )
                         .padding(.vertical)
                         // Title input
-                                        Text("Title")
-                                            .font(.headline)
-                                            .padding(.horizontal)
+                        Text("Title").font(.headline).fontWeight(.bold).padding(.horizontal)
                                         
                     TextField("Title", text: .constant(""))
                         .padding()
@@ -47,14 +45,16 @@ struct AddNewRecipes: View {
                         .padding(.horizontal)
 
                         // Description input
-                        Text("Description").font(.headline)  .frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
-                                       
-                        TextField("Description", text: .constant(""))
-                            .padding()
-                            .background(Color(.systemGray5))
-                            .cornerRadius(8)
-                            .frame(width:100, height: 100) // Adjust height to resemble a larger text box area
-                            .padding(.horizontal)
+                        
+                        Text("Description").font(.headline).padding(.horizontal).fontWeight(.bold)
+                        
+                        
+                        TextField("Description",text:.constant("")).frame(alignment: .leading).padding().fontWeight(.bold) // Aligning to the left
+    .frame(width: 367, height:130 , alignment: .topLeading)
+    .background(Color(.systemGray5))
+    .cornerRadius(8)
+        // Adjust height to resemble a larger text box area
+    .padding(.horizontal)
                         
 
                         // Add Ingredients section
