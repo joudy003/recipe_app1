@@ -24,7 +24,7 @@ struct main_page: View {
                             .frame(height: 100)
                             .background(Color(.systemGray6))
 
-                            Spacer().frame(height:75)
+                            Spacer().frame(height:50)
                             
                             Image(systemName: "fork.knife.circle")
                                 .resizable()

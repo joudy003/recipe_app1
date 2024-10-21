@@ -4,11 +4,11 @@ struct AddNewRecipes: View {
     var body: some View {
         @Environment(\.presentationMode) var presentationMode
         NavigationView {
-                    VStack(alignment: .leading, spacing: 16){
+                    VStack(alignment: .leading, spacing: 20){
                         HStack {
                             Text(  "    New Recipes").font(.title).bold()
                             Spacer().frame(height: 10)
-                        }.frame(height: 100)
+                        }.frame(height: 80)
                             .background(Color(.systemGray6))
                         
 
@@ -21,8 +21,9 @@ struct AddNewRecipes: View {
                                 .frame(width: 90, height: 90)
                                 .foregroundColor(myColors.appOrange)
 
-                            Text("Upload Photo")
-                                .font(.system(size: 27, weight: .bold))
+                            Text("Upload Photo")                      .padding(.top, -15)
+
+                                .font(.system(size: 25, weight: .bold))
                         }
                         .frame(maxWidth: .infinity, minHeight: 150)
                         .padding()
@@ -39,22 +40,22 @@ struct AddNewRecipes: View {
                                             .font(.headline)
                                             .padding(.horizontal)
                                         
-                                        TextField("Title", text: .constant(""))
-                                            .padding()
-                                            .background(Color(.systemGray5))
-                                            .cornerRadius(8)
-                                            .padding(.horizontal)
+                    TextField("Title", text: .constant(""))
+                        .padding()
+                        .background(Color(.systemGray5))
+                        .cornerRadius(8)
+                        .padding(.horizontal)
 
                         // Description input
-                        Text("Description").font(.headline).padding(.horizontal)
+                        Text("Description").font(.headline)  .frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
                                        
-                        TextField("Description" , text: .constant(""))
-                                           .padding()
-                                           .padding()
-                                           .padding()
-                                           .background(Color(.systemGray5))
-                                           .cornerRadius(8)
-                                           .padding(.horizontal)
+                        TextField("Description", text: .constant(""))
+                            .padding()
+                            .background(Color(.systemGray5))
+                            .cornerRadius(8)
+                            .frame(width:100, height: 100) // Adjust height to resemble a larger text box area
+                            .padding(.horizontal)
+                        
 
                         // Add Ingredients section
                         HStack {
