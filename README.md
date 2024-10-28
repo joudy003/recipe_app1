@@ -47,12 +47,6 @@ Code Overview
 Project Structure
 bash
 نسخ الكود
-RecipeApp/
-├── Models/            # Data models for recipe and ingredient entities
-├── Views/             # SwiftUI views for each screen
-├── ViewModels/        # ViewModel for managing app state
-├── Utilities/         # Helper functions and extensions
-└── Assets.xcassets/   # Image and color assets
 Key Files
 
 IngredientModalView.swift: Contains the pop-up modal for adding ingredients.
