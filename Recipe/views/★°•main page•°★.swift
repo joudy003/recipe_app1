@@ -64,7 +64,7 @@ struct main_page: View {
                         }
                     }
                 }
-            }
+        .navigationBarTitle(Text("Recipes"), displayMode: .inline)    }
         }
 
 #Preview {

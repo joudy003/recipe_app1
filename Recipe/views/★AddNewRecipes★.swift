@@ -3,7 +3,7 @@ import SwiftData
 
 
 struct AddNewRecipes: View {
-@State private var modelView = ModelView()
+    @State private var modelView = ModelView()
 
 @Environment(\.presentationMode) var presentationMode
 @Environment(\.modelContext) var modelContext
@@ -113,17 +113,17 @@ struct AddNewRecipes: View {
             
             HStack {
                 
-                Text("quantity")
+                Text("1")
                     .font(.headline)
                     .foregroundColor(myColors.appOrange).bold()
                 
-                Text("name")
+                Text("palsamic")
                     .font(.headline)
                     .foregroundColor(myColors.appOrange).bold()
                 //
                 Spacer()
                 //
-                Text("measurment").frame(width: 90,height:29 )                         .padding(.horizontal, 7)
+                Text("🥄spoon").frame(width: 90,height:29 ).padding(.horizontal, 7)
                     .padding(.vertical, 2)
                     .background(myColors.appOrange)
                     .foregroundColor(.white)
@@ -142,11 +142,13 @@ struct AddNewRecipes: View {
         let newRecipe = RecipeData(title: recipeName, description: description,  ing: ing)
         modelContext.insert(newRecipe)
     }
+//    init(modelContext: ModelContext){
+//      let modelView = ModelView (modelContext: modelContext)
+//        _modelView = /*State*/(initilvalue: modelView)
+//    }
     
         }
         
 
 
-#Preview {
-    AddNewRecipes()
-}
+

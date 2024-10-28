@@ -51,9 +51,9 @@ struct RecipeCard: View {
                     } // Adjust padding to position the search bar correctly
                 }
                 
-                NavigationLink(destination: ShowRecipeDetails()) {
+                NavigationLink(destination: ShowRecipeDetails(recipe: Recipe(title: " Halomi Salad", description: " Semi-hard cheese typically made from the milk of goats, sheep, or cows. It's known for its tangy taste and firm, chewy texture.", imageName: "img"))) {
                                   ZStack(alignment: .bottomLeading) {
-                                      Image(recipe.imageName)
+                                      Image("img")
                                           .resizable()
                                           .aspectRatio(contentMode: .fill)
                                           .frame(height: 250)

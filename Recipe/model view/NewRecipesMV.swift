@@ -12,9 +12,13 @@ extension AddNewRecipes{
  var showIngredientPopup = false // State to control sheet visibility
  var recepi_title: String = ""
  var recepi_Description: String = ""
+      
+       // init(modelContext: ModelContext){
+         // self.modelContext = modelContext
+        }
         
     }
-        }
+        
         
 
 
