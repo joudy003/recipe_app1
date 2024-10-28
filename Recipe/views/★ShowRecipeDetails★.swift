@@ -62,7 +62,7 @@ struct ShowRecipeDetails: View {
             // Delete Button Section
             Button(action: {
                 // Delete action
-            }) {
+            }){
                 Text("Delete Recipe")
                     .foregroundColor(.red)
                     .bold()

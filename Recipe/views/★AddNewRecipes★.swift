@@ -17,24 +17,21 @@ struct AddNewRecipes: View {
                 
                 HStack {
                     ZStack{
-                        Text("\n New Recipes").font(.title).bold()}
+                        Text("\n  New Recipes").font(.title).bold()}
                 }
-                .frame(width: 400 , height:70)
-                .background(Color(.systemGray6))
-                
                 // Image upload area
                 VStack {
                     Image(systemName: "photo.badge.plus")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 90, height: 90)
+                        .frame(width: 90, height: 80)
                         .foregroundColor(myColors.appOrange)
                     
                     Text("Upload Photo")
                         .padding(.top, -15)
                         .font(.system(size: 25, weight: .bold))
                 }
-                .frame(width: 380, height: 181)
+                .frame(width: 380, height: 150)
                 .padding()
                 .background(Color(.systemGray5))
                 .cornerRadius(8)
@@ -113,8 +110,9 @@ struct AddNewRecipes: View {
         }
         Spacer()
        
-        ScrollView {
+            
             HStack {
+                
                 Text("quantity")
                     .font(.headline)
                     .foregroundColor(myColors.appOrange).bold()
@@ -130,7 +128,7 @@ struct AddNewRecipes: View {
                     .background(myColors.appOrange)
                     .foregroundColor(.white)
                     .cornerRadius(8)
-            }}
+            }
                
         .padding()
         .background(Color(.systemGray5)).frame(width:358, height: 52)
