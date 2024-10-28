@@ -2,8 +2,12 @@
 import SwiftUI
 
 struct ShowRecipeDetails: View {
-    var recipe: Recipe
+    @State private var modelView = ModelView()
+    
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
+//        var recipes: Recipe
+        
         ScrollView {
             VStack(alignment: .leading) {
                 // Header with Back and Edit Button
@@ -17,28 +21,28 @@ struct ShowRecipeDetails: View {
                     }
                     Spacer()
                     Button(action: {
-                        // Edit action
+                      dismiss()
                     }) {
                         Text("save ")
                             .foregroundColor(.orange)  .padding(.vertical, 1)
                     }
                 }
                 
-
+                
                 .padding(.bottom)
                 
                 // Title Section
-                Text(recipe.title)
+                Text("recipes.title")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.horizontal)
                 
                 // Image and Description Section
-                Image(recipe.imageName)
+                Image("recipes.imageName")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                Text(recipe.description)
+                Text("recipes.description")
                     .font(.body)
                     .padding(.horizontal)
                     .padding(.vertical, 4)
@@ -51,28 +55,29 @@ struct ShowRecipeDetails: View {
                     .padding(.top)
                 
                 VStack(alignment: .leading) {
-//                    
-                    }
+                    //
                 }
-                
-                // Delete Button Section
-                Button(action: {
-                    // Delete action
-                }) {
-                    Text("Delete Recipe")
-                        .foregroundColor(.red)
-                        .bold()
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
-                        .padding(.horizontal)
-                }
-                .padding(.top)
-            }.navigationBarBackButtonHidden(true)
-        }
+            }
+            
+            // Delete Button Section
+            Button(action: {
+                // Delete action
+            }) {
+                Text("Delete Recipe")
+                    .foregroundColor(.red)
+                    .bold()
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+            }
+            .padding(.top)
+        }.navigationBarBackButtonHidden(true)
+        
     }
-
+    
+}
 
 #Preview {
     RecipeCard(recipe: Recipe(title: " Halomi Salad", description: " Semi-hard cheese typically made from the milk of goats, sheep, or cows. It's known for its tangy taste and firm, chewy texture.", imageName: "img"))}

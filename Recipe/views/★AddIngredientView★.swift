@@ -1,12 +1,11 @@
 import SwiftUI
 
 struct AddIngredientView: View {
+    @State private var modelView = ModelView()
+
     @Binding var isPresented: Bool
-    @State private var ingredientName = ""
-    @State private var measurement = "🥄Spoon"
-    @State private var servingCount = 1
-    let measurements = ["🥄Spoon", "🥛Cup"]
     @Environment(\.dismiss) private var dismiss
+    let measurements = ["🥄Spoon", "🥛Cup"]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -14,7 +13,7 @@ struct AddIngredientView: View {
             Text("Ingredient Name")
                 .font(.headline)
                 .bold()
-            TextField("Ingredient Name", text: $ingredientName)
+            TextField("Ingredient Name", text: $modelView.ingredientName)
                 .padding(10)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
@@ -26,7 +25,7 @@ struct AddIngredientView: View {
             HStack(spacing: 8) {
                 ForEach(measurements, id: \.self) { measure in
                     Button(action: {
-                        measurement = measure
+                        modelView.measurement = measure
                     }) {
                         HStack {
                             Image(systemName: measure == "Spoon" ? "🥄" : "🥛")
@@ -34,7 +33,7 @@ struct AddIngredientView: View {
                         }
                         .padding(8)
                         .frame(maxWidth: .infinity)
-                        .background(measurement == measure ? Color(myColors.appOrange) : Color(.systemGray5))
+                        .background(modelView.measurement == measure ? Color(myColors.appOrange) : Color(.systemGray5))
                         .foregroundColor(.white)
                         .cornerRadius(8)
                     }
@@ -49,8 +48,8 @@ struct AddIngredientView: View {
                 HStack(spacing: 4) {
                  
                     Button(action: {
-                        if servingCount > 1 {
-                            servingCount -= 1
+                if modelView.servingCount > 1 {
+                modelView.servingCount -= 1
                         }
                     }) {
                         Image(systemName: "minus.square")
@@ -58,7 +57,7 @@ struct AddIngredientView: View {
                             .foregroundColor(myColors.appOrange)
                     }
                     
-                    Text("\(servingCount)").bold()
+                    Text("\(modelView.servingCount)").bold()
                         .font(.title3)
                         .frame(width: 30)
                         .padding(.horizontal, 5)
@@ -66,7 +65,7 @@ struct AddIngredientView: View {
                         .cornerRadius(8)
                     
                     Button(action: {
-                        servingCount += 1
+                modelView.servingCount += 1
                     }) {
                         Image(systemName: "plus.square")
                             .font(.system(size: 30))
@@ -78,8 +77,8 @@ struct AddIngredientView: View {
                 .cornerRadius(8)
                 
                 HStack {
-                    Image(systemName: measurement == "Spoon" ? "🥄" : "🥛")
-                    Text(measurement)
+                    Image(systemName:modelView.measurement == "Spoon" ? "🥄" : "🥛")
+                    Text(modelView.measurement)
                 }
                
                 .frame(width:134 , height:45)
@@ -119,7 +118,6 @@ struct AddIngredientView: View {
         }
         .padding()
         .frame(width: 300, height: 400, alignment: .center)
-        .background(Color.white)
         .cornerRadius(15)
         .shadow(color: .gray.opacity(0.4), radius: 10, x: 0, y: 4)
         .overlay(

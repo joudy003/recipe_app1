@@ -2,9 +2,8 @@
 import SwiftUI
 
 struct RecipeCard: View {
-    
-    @State private var isPresentingNewRecipe = false
-    @State private var searchText = ""
+    @State private var modelView = ModelView()
+
     var recipe: Recipe
     
     
@@ -31,7 +30,7 @@ struct RecipeCard: View {
                                 .foregroundColor(.gray)
                                 .padding(.leading, 10) // Add padding to align with TextField
                             
-                            TextField("Search", text: $searchText)
+                            TextField("Search", text:$modelView.searchText)
                                 .padding(0)
                             
                             Button(action: {
@@ -52,7 +51,7 @@ struct RecipeCard: View {
                     } // Adjust padding to position the search bar correctly
                 }
                 
-                NavigationLink(destination: ShowRecipeDetails(recipe: recipe)) {
+                NavigationLink(destination: ShowRecipeDetails()) {
                                   ZStack(alignment: .bottomLeading) {
                                       Image(recipe.imageName)
                                           .resizable()
@@ -91,13 +90,13 @@ struct RecipeCard: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        isPresentingNewRecipe = true
+                        modelView.isPresentingNewRecipe = true
                     }) {
                         Image(systemName: "plus")
                             .font(.system(size: 22, weight: .bold))
                             .foregroundColor(myColors.appOrange)
                     }
-                    .sheet(isPresented: $isPresentingNewRecipe) {
+                    .sheet(isPresented: $modelView.isPresentingNewRecipe) {
                         AddNewRecipes()
                     }
                 }

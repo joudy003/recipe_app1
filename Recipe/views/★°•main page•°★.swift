@@ -3,10 +3,9 @@
 import SwiftUI
 
 struct main_page: View {
-    @State private var isPresentingNewRecipe = false
-    @State private var recipes: [String] = []
-   
-    
+    @State private var modelView = ModelView()
+
+
     var body: some View {
       
         NavigationView {
@@ -52,14 +51,14 @@ struct main_page: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: {
-                                isPresentingNewRecipe = true
+                                modelView.isPresentingNewRecipe = true
                                 
                             }) {
                                 Image(systemName: "plus")
                                     .font(.system(size: 22, weight: .bold))
                                     .foregroundColor(myColors.appOrange)
                             }
-                            .sheet(isPresented: $isPresentingNewRecipe) {
+                            .sheet(isPresented: $modelView.isPresentingNewRecipe) {
                                 AddNewRecipes()
                             }
                         }
